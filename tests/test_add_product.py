@@ -20,7 +20,6 @@ class TestAdd(unittest.TestCase):
                                             "Category": "Diapers",
                                             "Quantity supplied": "60 packets",
                                             "Unit price": "shs 23,000"
-
                                         }
                                     ),
                                     content_type='application/json')
@@ -36,7 +35,6 @@ class TestAdd(unittest.TestCase):
                                             "Category": "Diapers",
                                             "Quantity supplied": "60 packets",
                                             "Unit price": "shs 23,000"
-
                                         }
                                     ),
                                     content_type='application/json')
