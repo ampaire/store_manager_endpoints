@@ -11,6 +11,7 @@ products = [
         'Category': 'Cosmetics',
         'Quantity supplied': '85 boxes',
         'Unit price': 'shs 48,000'
+
     },
     {
         'date': '19-10-2018',
@@ -25,8 +26,7 @@ products = [
 
 @app.route("/",)
 def index():
-    return 'Welcome to your products page'
-
+    return 'Welcome to the products page'
 
 
 @app.route("/api/v1/products", methods=["GET"])
