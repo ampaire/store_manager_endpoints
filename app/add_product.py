@@ -34,7 +34,7 @@ def add_product():
     for product in products:
 
         if not request.json:
-            return 'Invalid input format'       
+            return ('Invalid input format'),404       
 
         product = {
 
@@ -48,7 +48,7 @@ def add_product():
 
     products.append(product)
     if len(product) == 0:
-        return "missing data"
+        return ("Cannot add empty sett"),405
     return jsonify({'products': products}),200
 
 
