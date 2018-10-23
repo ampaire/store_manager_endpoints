@@ -23,7 +23,7 @@ products = [
 ]
 
 
-@app.route("/",)
+@app.route("/")
 def index():
     return 'Restricted to the admin only'
 
