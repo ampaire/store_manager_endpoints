@@ -24,7 +24,7 @@ products = [
 ]
 
 
-@app.route("/",)
+@app.route("/")
 def index():
     return 'Welcome to the products page'
 
