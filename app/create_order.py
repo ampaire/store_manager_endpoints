@@ -23,7 +23,7 @@ Sale_orders = [
 ]
 
 
-@app.route("/",)
+@app.route("/")
 def index():
     return 'Add products to the shopping cart'
 
