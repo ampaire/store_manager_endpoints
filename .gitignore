@@ -1,5 +1,6 @@
 /.pytest_cache/
 /app/__init__.pyc
+/app/delete_product.pyc
 /app/add_product.pyc
 /app/create_order.pyc
 /app/get_oneproduct.pyc
@@ -8,3 +9,5 @@
 /tests/__init__.pyc
 /venv/
 /app/get_sale_orders.pyc
+/app/__pycache__/
+app/modify_product.pyc
