@@ -21,7 +21,7 @@ products = [
 ]
 
 
-@app.route("/",)
+@app.route("/")
 def index():
     return "Here is your product"
 
