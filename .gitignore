@@ -8,3 +8,5 @@ models/app/__init__.pyc
 /models/__pycache__/
 /__pycache__/
 /app/app.pyc
+/tests/test_app.pyc
+/app/views.pyc

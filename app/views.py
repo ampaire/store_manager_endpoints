@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from __init__ import app
+from app.__init__ import app
 import datetime
 
 
@@ -57,21 +57,17 @@ def get_products():
 
 @app.route("/api/v1/products", methods=["POST"])
 def create_product():
-
-    data = {
-        "id": products[-1][id_]+1,
+    product = {
+        "id_": products[-1]["id_"]+1,
         "date": datetime.datetime.today(),
-        "name": request.json["name"],
-        "suppliers": request.json.get("suppliers", ""),
-        "Category": request.json.get("Category", ""),
-        "unit price": request.json["unit price"]
+        "name": request.get_json()["name"],
+        "suppliers": request.get_json().get("suppliers", ""),
+        "Category": request.get_json().get("Category", ""),
+        "unit price": request.get_json()["unit price"]
     }
-    product= json.get("data")
-    products.append(product)
-    if not request.json:
-        return ("Invalid input format"), 404
     if product in products:
         return ("Oops! Product already exists"), 400
+    products.append(product)
     if len(product) == 0:
         return ("Cannot add empty product"), 405
     return jsonify({"products": products}), 201
@@ -86,15 +82,12 @@ def get_one_product(id_):
 
 
 @app.route("/api/v1/products/<int:id_>", methods=["PUT"])
-def modify_a_product(name):
+def modify_a_product(id_):
     product = [product for product in products if product["id_"] == id_]
-    product[0]["name"] = request.json.get("name", product[0]["name"])
-    product[0]["suppliers"] = request.json.get(
-        "suppliers", product[0]["suppliers"])
-    product[0]["Category"] = request.json.get(
-        "Category", product[0]["Category"])
-    product[0]["unit price"] = request.json.get(
-        "unit price", product[0]["unit price"])
+    product[0]["name"] = request.get_json().get("name", product[0]["name"])
+    product[0]["suppliers"] = request.get_json().get("suppliers", product[0]["suppliers"])
+    product[0]["Category"] = request.get_json().get("Category", product[0]["Category"])
+    product[0]["unit price"] = request.get_json().get("unit price", product[0]["unit price"])
 
     return jsonify({"products": products})
 
@@ -108,23 +101,31 @@ def delete_product(id_):
     return jsonify({'result': 'Successfully Deleted'}), 200
 
 
-@app.route("/api/v1/sale_orders", methods=["POST"])
+@app.route("/api/v1/sales", methods=["POST"])
 def add_sale_order():
     sale_order = {
-
+        "id_": sale_orders[-1]["id_"]+1,
         "date": datetime.datetime.today(),
-        "name": request.json["name"],
-        "Quantity added to cart": request.json.get("Quantity added to cart", ""),
-        "Category": request.json.get("Category", ""),
-        "Created by": request.json["Created by"],
-        "unit price": request.json["unit price"]
+        "name": request.get_json()["name"],
+        "suppliers": request.get_json().get("suppliers", ""),
+        "Category": request.get_json().get("Category", ""),
+        "unit price": request.get_json()["unit price"]
     }
-    return jsonify({"sale_order": sale_order}), 200
+    if sale_order in sale_orders:
+        return ("Oops! sale_order already exists"), 400
+    sale_orders.append(sale_order)
+    if len(sale_order) == 0:
+        return ("You have not added any sale_order"), 404
+    return jsonify({"sale_orders": sale_orders}), 201
 
-@app.route("/api/v1/sale_orders", methods=["GET"]
+    if sale_order in sale_orders:
+        return ("Oops! sale_order already exists"), 400
+    sale_orders.append(sale_order)
+    if len(sale_order) == 0:
+        return ("You have not created any sale order"), 405
+    return jsonify({"sale_orders": sale_orders}), 201
+
+@app.route("/api/v1/sales", methods=["GET"])
 def get_sale_orders():
     return jsonify({"sale_orders": sale_orders})
 
-
-if __name__ == "__main__":
-    app.run(debug=True, port="8080")
