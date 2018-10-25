@@ -1,8 +1,10 @@
+*STORE MANAGER ENDPOINTS
+Store manager is an application that enables users to keep track of goods in their stores. It is meant for managerial purposes by store owners. The two major people that operate it are the admins who add store attendants and can choose to make them administrators. 
+
 [![Coverage Status](https://coveralls.io/repos/github/ampaire/store_manager_endpoints/badge.svg?branch=master)](https://coveralls.io/github/ampaire/store_manager_endpoints?branch=master)
 
 [![Build Status](https://travis-ci.org/ampaire/Api.svg?branch=master)](https://travis-ci.org/ampaire/Api)
- #STORE MANAGER ENDPOINTS
-Store manager is an application that enables users to keep track of goods in their stores. It is meant for managerial purposes by store owners. The two major people that operate it are the admins who add store attendants and can choose to make them administrators.
+
 
 This repository mainly is for creating endpoints for the products in the store. The main endpoints that I created were:
 - An admin can create/add a product
