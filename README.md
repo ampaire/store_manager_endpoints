@@ -1,5 +1,5 @@
 # STORE MANAGER ENDPOINTS 
-[![Coverage Status](https://coveralls.io/repos/github/ampaire/store_manager_endpoints/badge.svg?branch=master)](https://coveralls.io/github/ampaire/store_manager_endpoints?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/ampaire/store_manager_endpoints/badge.svg?branch=master)](https://coveralls.io/github/ampaire/store_manager_endpoints?branchdevelop)
 [![Build Status](https://travis-ci.org/ampaire/Api.svg?branch=develop)](https://travis-ci.org/ampaire/Api)
 <a href="https://codeclimate.com/github/ampaire/store_manager_endpoints/maintainability"><img src="https://api.codeclimate.com/v1/badges/91c97cb448d3dbcfd712/maintainability" /></a>
 
