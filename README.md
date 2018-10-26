@@ -42,15 +42,22 @@ $pip install pytest
 ```
 
 #### endpoints 
-Method                   |endpoint(s)
-
+Method                   |endpoint
+-------------------------|-----------------------------
 GET(gets all products)   |api/v1/products
+-------------------------|-----------------------------
 GET(gets one product)    |api/v1/products/<int:id_>
-GET(gets all sale orders)|api/v1/sales                   
+-------------------------|-----------------------------
+GET(gets all sale orders)|api/v1/sales
+-------------------------|----------------------------
 POST(adds a sale order)  |api/v1/sales
+-------------------------|----------------------------
 POST(adds a product)     |api/v1/products
+-------------------------|----------------------------
 PUT(modifies a product)  |api/v1/products/<int:id_>
+-------------------------|----------------------------
 DELETE(deletes a product)|api/v1/products/<int:id_>
+-------------------------|----------------------------
 
 ### Running
 `$python run.py`
