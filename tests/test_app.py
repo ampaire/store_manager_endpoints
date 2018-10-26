@@ -26,10 +26,11 @@ class TestApp(unittest.TestCase):
 
         }
         self.sale_order = {
-            "name": "Pampers Pants",
-            "suppliers": "Product of African Queen ltd",
-            "Category": "Diapers",
-            "unit price": "shs 20,000"
+            "name": "Movit",
+            "Category": "Cosmetics",
+            "Quantity added to cart": "4boxes",
+            "unit price": "shs 96,000",
+            "Created by": "mbabazi"
 
         }
 
@@ -59,12 +60,6 @@ class TestApp(unittest.TestCase):
         response = self.client.get('/api/v1/sales/again')
         self.assertEqual(response.status_code, 404)
 
-
-    def test_cannot_modify_nonexisting_item(self):
-
-        response = self.client.get('/api/v1/products/4',(self.bad_product), content_type='application/JSON' )
-        self.assertEqual(response.status_code, 404)
-
     def test_invalid_JSON(self):
         response = self.client.post('/api/v1/products/1',
                                     data="not a json",
@@ -74,4 +69,3 @@ class TestApp(unittest.TestCase):
     def test_cannot_delete_non_existent(self):
         response = self.client.delete("/api/v1/products/6")
         self.assertEqual(response.status_code, 404)
-
