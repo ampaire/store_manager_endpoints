@@ -21,7 +21,7 @@ Store manager is an application that enables users to keep track of goods in the
     * python 3
     * requests
     
-## Installation
+## Installation.
     all required modules listed above need to be installed 
 * all installations are run with `$pip install module`
 Example
