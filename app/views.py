@@ -3,46 +3,8 @@ from app.__init__ import app
 import datetime
 
 
-products = [
-    {
-        "id_": 1,
-        "date": "19-10-2018",
-        "name": "Geisha",
-        "suppliers": "Product of African Queen ltd",
-        "Category": "Cosmetics",
-        "unit price": "shs 96,000"
-    },
-    {
-        "id_": 2,
-        "date": "19-10-2018",
-        "name": "Pampers Pants",
-        "suppliers": "Product of African Queen ltd",
-        "Category": "Diapers",
-        "unit price": "shs 20,000"
-
-    }
-]
-sale_orders = [
-    {
-        "id_": 1,
-        "date": "21-10-2018",
-        "name": "Movit",
-        "Category": "Cosmetics",
-        "Quantity added to cart": "2 boxes",
-        "unit price": "shs 96,000",
-        "Created by": "mbabazi"
-    },
-    {
-        "id_": 2,
-        "date": "21-10-2018",
-        "name": "Dettol",
-        "Category": "Cosmetics",
-        "Quantity added to cart": "4 packets",
-        "unit price": "shs 20,000",
-        "Created by": "namara"
-
-    }
-]
+products = []
+sale_orders = []
 
 
 @app.route("/")
