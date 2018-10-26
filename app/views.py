@@ -89,6 +89,9 @@ def modify_a_product(id_):
     product[0]["Category"] = request.get_json().get("Category")
     product[0]["unit price"] = request.get_json().get("unit price")
 
+    if product not in products:
+        return("item not found!"),404
+
     return jsonify({"products": products})
 
 
