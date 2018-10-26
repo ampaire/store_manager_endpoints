@@ -48,8 +48,7 @@ class TestApp(unittest.TestCase):
         self.assertEqual(response.status_code, 200)
 
     def test_can_add_sale_order(self):
-        response = self.client.post(
-            "/api/v1/sales", data=json.dumps(self.sale_order), content_type="application/JSON")
+        response = self.client.post("/api/v1/sales", data=json.dumps(self.sale_order), content_type="application/JSON")
         self.assertEqual(response.status_code, 201)
 
     def test_can_get_sales(self):
