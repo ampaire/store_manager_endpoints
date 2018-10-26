@@ -61,9 +61,9 @@ def create_product():
         "id_": products[-1]["id_"]+1,
         "date": datetime.datetime.today(),
         "name": request.get_json()["name"],
-        "suppliers": request.get_json().get("suppliers", ""),
-        "Category": request.get_json().get("Category", ""),
-        "unit price": request.get_json()["unit price"]
+        "suppliers": request.get_json().get("suppliers"),
+        "Category": request.get_json().get("Category"),
+        "unit price": request.get_json().get("unit price")
     }
     if product in products:
         return ("Oops! Product already exists"), 400
@@ -84,10 +84,10 @@ def get_one_product(id_):
 @app.route("/api/v1/products/<int:id_>", methods=["PUT"])
 def modify_a_product(id_):
     product = [product for product in products if product["id_"] == id_]
-    product[0]["name"] = request.get_json().get("name", product[0]["name"])
-    product[0]["suppliers"] = request.get_json().get("suppliers", product[0]["suppliers"])
-    product[0]["Category"] = request.get_json().get("Category", product[0]["Category"])
-    product[0]["unit price"] = request.get_json().get("unit price", product[0]["unit price"])
+    product[0]["name"] = request.get_json().get("name")
+    product[0]["suppliers"] = request.get_json().get("suppliers")
+    product[0]["Category"] = request.get_json().get("Category")
+    product[0]["unit price"] = request.get_json().get("unit price")
 
     return jsonify({"products": products})
 
@@ -98,7 +98,7 @@ def delete_product(id_):
     if len(product) == 0:
         return ("Failed to Delete! Cannot delete non-existent item"), 404
     products.remove(product[0])
-    return jsonify({'result': 'Successfully Deleted'}), 200
+    return jsonify({'products':products, "message": 'Successfully Deleted'}), 200
 
 
 @app.route("/api/v1/sales", methods=["POST"])
