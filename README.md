@@ -9,7 +9,7 @@ Store manager is an application that enables users to keep track of goods in the
 ## GETTING STARTED
 * Fork into my repository by running `$git clone https://github.com/ampaire/store_manager_endpoints`
 * Creating project path `$cd store_manager_endpoints`
-* Creating a virtual environment  `$virtual env venv -p python3`
+* Creating a virtual environment  `$virtual env venv -p python`
 * Activating the virtual environment  linux - `$source venv/bin/activate` and windows `c:/ .\venv\Scripts\activate venv/bin/activate`
 * `$pip install -r requirements.txt`  for the project dependences.
 
