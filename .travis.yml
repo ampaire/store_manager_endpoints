@@ -11,8 +11,6 @@ install:
 # command to run tests
 script:
 -nosetests --with-cov --cov tests/
--coverage
--coveralls
 
 after_success:
 -coveralls
