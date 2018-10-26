@@ -1,6 +1,6 @@
 # STORE MANAGER ENDPOINTS 
 [![Coverage Status](https://coveralls.io/repos/github/ampaire/store_manager_endpoints/badge.svg?branch=master)](https://coveralls.io/github/ampaire/store_manager_endpoints?branchdevelop)
-[![Build Status](https://travis-ci.org/ampaire/Api.svg?branch=develop)](https://travis-ci.org/ampaire/Api)
+[![Build Status](https://travis-ci.org/ampaire/store_manager_endpoints.svg?branch=develop)](https://travis-ci.org/ampaire/store_manager_endpoints)
 <a href="https://codeclimate.com/github/ampaire/store_manager_endpoints/maintainability"><img src="https://api.codeclimate.com/v1/badges/91c97cb448d3dbcfd712/maintainability" /></a>
 
 Store manager is an application that enables users to keep track of goods in their stores. It is meant for managerial purposes by store owners. The two major people that operate it are the admins who add store attendants and can choose to make them administrators.
