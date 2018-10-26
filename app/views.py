@@ -14,13 +14,16 @@ def index():
 
 @app.route("/api/v1/products", methods=["GET"])
 def get_products():
+    if len(products) > 0:
+        return jsonify({"products": products})
+    else:
+        return jsonify({"message": "Please add a product first"})
 
-    return jsonify({"products": products})
 
 @app.route("/api/v1/products", methods=["POST"])
 def create_product():
     product = {
-        "id_": products[-1]["id_"]+1,
+        "id_": len(products)+1,
         "date": datetime.datetime.today(),
         "name": request.get_json()["name"],
         "suppliers": request.get_json().get("suppliers"),
@@ -29,10 +32,12 @@ def create_product():
     }
     if product in products:
         return ("Oops! Product already exists"), 400
-    products.append(product)
-    if len(product) == 0:
+    elif len(product) == 0:
         return ("Cannot add empty product"), 405
-    return jsonify({"products": products}), 201
+    else:
+        products.append(product)
+
+        return jsonify({"products": products}), 201
 
 
 @app.route("/api/v1/products/<int:id_>", methods=["GET"])
@@ -52,7 +57,7 @@ def modify_a_product(id_):
     product[0]["unit price"] = request.get_json().get("unit price")
 
     if product not in products:
-        return("item not found!"),404
+        return("item not found!"), 404
 
     return jsonify({"products": products})
 
@@ -63,7 +68,7 @@ def delete_product(id_):
     if len(product) == 0:
         return ("Failed to Delete! Cannot delete non-existent item"), 404
     products.remove(product[0])
-    return jsonify({'products':products, "message": 'Successfully Deleted'}), 200
+    return jsonify({'products': products, "message": 'Successfully Deleted'}), 200
 
 
 @app.route("/api/v1/sales", methods=["POST"])
@@ -90,7 +95,7 @@ def add_sale_order():
         return ("You have not created any sale order"), 405
     return jsonify({"sale_orders": sale_orders}), 201
 
+
 @app.route("/api/v1/sales", methods=["GET"])
 def get_sale_orders():
     return jsonify({"sale_orders": sale_orders})
-
