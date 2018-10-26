@@ -11,7 +11,7 @@ Store manager is an application that enables users to keep track of goods in the
 * Creating project path `$cd store_manager_endpoints`
 * Creating a virtual environment  `$virtual env venv -p python3`
 * Activating the virtual environment  linux - `$source venv/bin/activate` and windows `c:/ .\venv\Scripts\activate venv/bin/activate`
-* `$pip install -r requirements.txt`  for the project dependences
+* `$pip install -r requirements.txt`  for the project dependences.
 
 ### Required
     * pip3
