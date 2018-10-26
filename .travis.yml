@@ -10,7 +10,7 @@ install:
 
 # command to run tests
 script:
--nosetests --with-cov --cov tests/
+-pytest
 
 after_success:
 -coveralls
