@@ -74,7 +74,7 @@ def delete_product(id_):
 @app.route("/api/v1/sales", methods=["POST"])
 def add_sale_order():
     sale_order = {
-        "id_": sale_orders[-1]["id_"]+1,
+        "id_": len(sale_orders)+1,
         "date": datetime.datetime.today(),
         "name": request.get_json()["name"],
         "suppliers": request.get_json().get("suppliers", ""),
