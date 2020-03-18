@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/ampaire/store_manager_endpoints.svg?branch=develop)](https://travis-ci.org/ampaire/store_manager_endpoints)
 <a href="https://codeclimate.com/github/ampaire/store_manager_endpoints/maintainability"><img src="https://api.codeclimate.com/v1/badges/91c97cb448d3dbcfd712/maintainability" /></a>
 
-Store manager is an application that enables users to keep track of goods in their stores. It is meant for managerial purposes by store owners. The two major people that operate it are the admins who add store attendants and can choose to make them administrators.
+Store manager is an application that enables users to keep track of goods in their stores. It is meant for managerial purposes by store owners. The two major people that operate it are the admins who add store attendants and can choose to make them administrators. This is the implementation of the API for this project.
 
 
 ## GETTING STARTED
@@ -13,7 +13,8 @@ Store manager is an application that enables users to keep track of goods in the
 * Activating the virtual environment  linux - `$source venv/bin/activate` and windows `c:/ .\venv\Scripts\activate venv/bin/activate`
 * `$pip install -r requirements.txt`  for the project dependences.
 
-### Required
+### Prerequisites
+
     * pip3
     * pylint
     * pytest
@@ -22,8 +23,8 @@ Store manager is an application that enables users to keep track of goods in the
     * requests
     
 ## Installation.
-    all required modules listed above need to be installed 
-* all installations are run with `$pip install module`
+      all required modules listed above need to be installed 
+* all installations are run with `$pip install <module-name>`
 Example
 `$pip install pytest`
 
@@ -61,17 +62,16 @@ DELETE(deletes a product)|api/v1/products/<int:id_>
 
 ### Running
 `$python run.py`
-### Testing
-`$pytest
 
-### Deployment
-This app has been hosted on Heroku at https://phestores.herokuapp.com/
+### Testing
+To run the tests 
+`$pytest
 
 ### Contributing
 To contribute to this project,
 - fork this repository and make necessary changes. Then create a branch `improved-feature` and commit changes
 
 ### AUTHOR
-    Ampaire Phemia
+    [Ampaire Phemia](github.com/ampaire)
 
 
